@@ -43,7 +43,7 @@ public class MarsRover {
         //TODO 这里也可以优化，同样的思路
         if (direction.equals("N")){
             direction="E";
-        }else if (direction.equals("W")){
+        }else if (direction.equals("E")){
             direction="S";
         }else if(direction.equals("S")){
             direction="E";

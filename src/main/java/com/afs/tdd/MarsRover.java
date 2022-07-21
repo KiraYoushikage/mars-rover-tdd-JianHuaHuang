@@ -13,11 +13,26 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if(command.equals("M")){
-            DirectMove directMove=DirectMove.getMap().get(direction);
-            x+=directMove.getX();
-            y+=directMove.getY();
-        }
+           move();
+        }else if (command.equals("L")){
+            //TODO 这里也可以优化，同样的思路
+            if (direction.equals("N")){
+                direction="W";
+            }
 
+        }
+    }
+
+    public void move(){
+        DirectMove directMove=DirectMove.getMap().get(direction);
+        x+=directMove.getX();
+        y+=directMove.getY();
+    }
+
+    public void turnLeft(){
+
+    }
+    public void turnRight(){
 
     }
 }

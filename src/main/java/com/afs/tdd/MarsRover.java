@@ -1,5 +1,6 @@
 package com.afs.tdd;
 
+import com.afs.tdd.enums.DirectMove;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,15 +13,9 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if(command.equals("M")){
-            if (direction.equals("N")){
-                y++;
-            }else if(direction.equals("E")){
-                x++;
-            }else if(direction.equals("S")){
-                y--;
-            }else if(direction.equals("W")){
-                x--;
-            }
+            DirectMove directMove=DirectMove.getMap().get(direction);
+            x+=directMove.getX();
+            y+=directMove.getY();
         }
 
     }

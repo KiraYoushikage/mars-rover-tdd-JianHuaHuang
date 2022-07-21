@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class DemoTest {
 
     @Test
-    void should__when__given_() {
+    void should_goto_0_1_N_when_command_M_given_0_0_N() {
         //given
         MarsRover marsRover=new MarsRover(0,0,"N");
         //when
@@ -15,6 +15,17 @@ class DemoTest {
         Assertions.assertEquals(0,marsRover.getX());
         Assertions.assertEquals(1,marsRover.getY());
         Assertions.assertEquals("N",marsRover.getDirection());
+    }
+    @Test
+    void should_goto_1_0_E_when_command_M_given_0_0_E() {
+        //given
+        MarsRover marsRover=new MarsRover(0,0,"E");
+        //when
+        marsRover.executeCommand("M");
+        //then
+        Assertions.assertEquals(1,marsRover.getX());
+        Assertions.assertEquals(0,marsRover.getY());
+        Assertions.assertEquals("E",marsRover.getDirection());
     }
     
 }

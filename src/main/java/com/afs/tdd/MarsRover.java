@@ -15,7 +15,6 @@ public class MarsRover {
             if (direction.equals("N")){
                 y++;
             }
-
         }
 
     }

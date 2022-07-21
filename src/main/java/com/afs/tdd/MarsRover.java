@@ -40,6 +40,15 @@ public class MarsRover {
         }
     }
     public void turnRight(){
-
+        //TODO 这里也可以优化，同样的思路
+        if (direction.equals("N")){
+            direction="E";
+        }else if (direction.equals("W")){
+            direction="S";
+        }else if(direction.equals("S")){
+            direction="E";
+        }else if(direction.equals("E")){
+            direction="N";
+        }
     }
 }

@@ -152,7 +152,7 @@ class DemoTest {
     }
 
     @Test
-    void should_goto_0_0_N_when_command_List_given_0_0_N() {
+    void should_goto_0_1_S_when_command_List_given_0_0_N() {
         //given
         MarsRover marsRover=new MarsRover(0,0,"N");
         List<String> commands=new ArrayList<String>(){{

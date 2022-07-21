@@ -57,6 +57,6 @@ public class MarsRover implements Direction {
     }
 
     public void executeCommands(List<String> commands){
-//        commands.forEach(this::executeCommand);
+        commands.forEach(this::executeCommand);
     }
 }

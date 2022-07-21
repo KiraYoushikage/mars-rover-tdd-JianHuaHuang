@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.afs.tdd.Instructions.*;
+import static com.afs.tdd.constant.Instructions.*;
 
 class DemoTest {
 

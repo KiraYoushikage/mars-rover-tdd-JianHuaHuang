@@ -1,4 +1,4 @@
-package com.afs.tdd;
+package com.afs.tdd.constant;
 
 import lombok.Data;
 

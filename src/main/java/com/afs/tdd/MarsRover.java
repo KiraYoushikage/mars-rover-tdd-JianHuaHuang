@@ -1,16 +1,17 @@
 package com.afs.tdd;
 
 import com.afs.tdd.enums.DirectMove;
+import com.afs.tdd.utils.DirectTurnUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
 
-import static com.afs.tdd.Instructions.*;
+import static com.afs.tdd.constant.Instructions.*;
 
 @Data
 @AllArgsConstructor
-public class MarsRover implements Direction {
+public class MarsRover {
     private int x;
     private int y;
     private String direction;
@@ -33,27 +34,11 @@ public class MarsRover implements Direction {
 
     public void turnLeft(){
         //TODO 这里也可以优化，同样的思路
-        if (direction.equals("N")){
-            direction="W";
-        }else if (direction.equals("W")){
-            direction="S";
-        }else if(direction.equals("S")){
-            direction="E";
-        }else if(direction.equals("E")){
-            direction="N";
-        }
+        direction=DirectTurnUtils.leftTurnMap.get(direction);
     }
     public void turnRight(){
         //TODO 这里也可以优化，同样的思路
-        if (direction.equals("N")){
-            direction="E";
-        }else if (direction.equals("E")){
-            direction="S";
-        }else if(direction.equals("S")){
-            direction="W";
-        }else if(direction.equals("W")){
-            direction="N";
-        }
+        direction= DirectTurnUtils.rightTurnMap.get(direction);
     }
 
     public void executeCommands(List<String> commands){

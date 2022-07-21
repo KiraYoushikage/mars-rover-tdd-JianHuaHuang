@@ -15,15 +15,7 @@ public class MarsRover {
         if(command.equals("M")){
            move();
         }else if (command.equals("L")){
-            //TODO 这里也可以优化，同样的思路
-            if (direction.equals("N")){
-                direction="W";
-            }else if (direction.equals("W")){
-                direction="S";
-            }else if(direction.equals("S")){
-                direction="E";
-            }
-
+            turnLeft();
         }
     }
 
@@ -34,7 +26,14 @@ public class MarsRover {
     }
 
     public void turnLeft(){
-
+        //TODO 这里也可以优化，同样的思路
+        if (direction.equals("N")){
+            direction="W";
+        }else if (direction.equals("W")){
+            direction="S";
+        }else if(direction.equals("S")){
+            direction="E";
+        }
     }
     public void turnRight(){
 

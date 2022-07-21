@@ -62,5 +62,17 @@ class DemoTest {
         Assertions.assertEquals(0,marsRover.getY());
         Assertions.assertEquals("W",marsRover.getDirection());
     }
+
+    @Test
+    void should_goto_0_0_S_when_command_L_given_0_0_W() {
+        //given
+        MarsRover marsRover=new MarsRover(0,0,"W");
+        //when
+        marsRover.executeCommand("L");
+        //then
+        Assertions.assertEquals(0,marsRover.getX());
+        Assertions.assertEquals(0,marsRover.getY());
+        Assertions.assertEquals("S",marsRover.getDirection());
+    }
     
 }

@@ -3,6 +3,12 @@ package com.afs.tdd;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.afs.tdd.Instructions.*;
+
 class DemoTest {
 
     @Test
@@ -136,12 +142,27 @@ class DemoTest {
     @Test
     void should_goto_0_0_N_when_command_R_given_0_0_W() {
         //given
-        MarsRover marsRover=new MarsRover(0,0,"W");
+        MarsRover marsRover=new MarsRover(1,1,"W");
         //when
         marsRover.executeCommand("R");
         //then
-        Assertions.assertEquals(0,marsRover.getX());
-        Assertions.assertEquals(0,marsRover.getY());
+        Assertions.assertEquals(1,marsRover.getX());
+        Assertions.assertEquals(1,marsRover.getY());
         Assertions.assertEquals("N",marsRover.getDirection());
+    }
+
+    @Test
+    void should_goto_0_0_N_when_command_List_given_0_0_N() {
+        //given
+        MarsRover marsRover=new MarsRover(0,0,"N");
+        List<String> commands=new ArrayList<String>(){{
+            addAll(Arrays.asList(MOVE,TURN_LEFT,MOVE,TURN_RIGHT,MOVE,TURN_RIGHT,MOVE,TURN_RIGHT,MOVE));
+        }};
+        //when
+        marsRover.executeCommands(commands);
+        //then
+        Assertions.assertEquals(0,marsRover.getX());
+        Assertions.assertEquals(1,marsRover.getY());
+        Assertions.assertEquals("S",marsRover.getDirection());
     }
 }

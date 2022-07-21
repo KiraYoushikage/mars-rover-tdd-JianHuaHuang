@@ -4,19 +4,23 @@ import com.afs.tdd.enums.DirectMove;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
+import static com.afs.tdd.Instructions.*;
+
 @Data
 @AllArgsConstructor
-public class MarsRover {
+public class MarsRover implements Direction {
     private int x;
     private int y;
     private String direction;
 
     public void executeCommand(String command) {
-        if(command.equals("M")){
+        if(command.equals(MOVE)){
            move();
-        }else if (command.equals("L")){
+        } else if (command.equals(TURN_LEFT)){
             turnLeft();
-        }else if(command.equals("R")){
+        }else if(command.equals(TURN_RIGHT)){
             turnRight();
         }
     }
@@ -50,5 +54,9 @@ public class MarsRover {
         }else if(direction.equals("W")){
             direction="N";
         }
+    }
+
+    public void executeCommands(List<String> commands){
+//        commands.forEach(this::executeCommand);
     }
 }

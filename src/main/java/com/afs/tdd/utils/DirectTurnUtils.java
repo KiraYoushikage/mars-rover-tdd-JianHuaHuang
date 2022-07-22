@@ -6,6 +6,7 @@ import java.util.Map;
 public class DirectTurnUtils {
     public static final Map<String,String> leftTurnMap;
     public static final Map<String,String> rightTurnMap;
+
     static {
         leftTurnMap=new HashMap<>();
         leftTurnMap.put("N","W");
